@@ -2,6 +2,9 @@ import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core';
 import { BrowserRouter, Route } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
@@ -14,7 +17,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme} store={store}>
       <BrowserRouter>
         <div className="App">
           <Navbar />
