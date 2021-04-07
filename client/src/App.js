@@ -17,17 +17,19 @@ import './App.css';
 
 const App = () => {
   return (
-    <MuiThemeProvider theme={theme} store={store}>
-      <BrowserRouter>
-        <div className="App">
-          <Navbar />
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-        </div>
-        {/* <Route path="/" component={LandingPage} /> */}
-      </BrowserRouter>
-    </MuiThemeProvider>
+    <Provider store={store}>
+      <MuiThemeProvider theme={theme}>
+        <BrowserRouter>
+          <div className="App">
+            <Navbar />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+          </div>
+          {/* <Route path="/" component={LandingPage} /> */}
+        </BrowserRouter>
+      </MuiThemeProvider>
+    </Provider>
   );
 };
 
